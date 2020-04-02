@@ -1,0 +1,49 @@
+version: "3.5"
+
+services:
+
+  mysql:
+    image: mysql:${MYSQL_VERSION}
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  https-portal:
+    image: steveltn/https-portal:1
+    environment:
+      DOMAINS: >
+        localhost -> http://phpmyadmin:80
+      STAGE: local
+    volumes:
+      - https-portal_certs:/var/lib/https-portal
+    ports:
+      - 8080:443
+    depends_on:
+      - phpmyadmin
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:${PHPMYADMIN_VERSION}
+    expose:
+      - 80
+    depends_on:
+      - mysql
+    environment:
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      - PMA_ABSOLUTE_URI=https://localhost:8080
+      - PMA_USER=root
+      - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - phpmyadmin_sessions:/sessions
+
+volumes:
+  mysql_data:
+  https-portal_certs:
+  phpmyadmin_sessions:

@@ -1,0 +1,14 @@
+# Versiones de los contenedores
+
+MYSQL_VERSION=8
+PHPMYADMIN_VERSION=latest
+
+# Variables de configuración para el entorno de desarrollo
+
+MYSQL_ROOT_PASSWORD=12345Abcde
+MYSQL_DATABASE=egibide
+MYSQL_USER=egibide
+MYSQL_PASSWORD=12345Abcde
+
+# Prefijo para los contenedores
+COMPOSE_PROJECT_NAME=mysql8
