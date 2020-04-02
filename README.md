@@ -44,6 +44,6 @@ Instrucciones para arrancar una base de datos MySQL 8 en local mediante Docker.
 
 ## MySQL Workbench
 
-La base de datos expone el puerto 3306 en localhost y para conectar desde MySQL Workbench:
+La base de datos expone el puerto 3306 en localhost y para conectar desde [MySQL Workbench](https://www.mysql.com/products/workbench/):
 
 ![](conexion.png)
