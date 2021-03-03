@@ -9,7 +9,7 @@ Instrucciones para arrancar una base de datos MySQL 8 en local mediante Docker.
 2. Clonar este repositorio:
 
 	```
-	git clone https://github.com/egibide/mysql8.git
+	git clone https://github.com/ijaureguialzo/mysql8.git
 	```
 
 3. En un terminal, situarse en la carpeta `mysql8` (o si se ha renombrado, la que contenga este archivo `README.md`):
