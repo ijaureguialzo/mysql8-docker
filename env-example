@@ -1,6 +1,6 @@
 # Versiones de los contenedores
 
-MYSQL_VERSION=10.6
+MYSQL_VERSION=8-oracle
 PHPMYADMIN_VERSION=latest
 
 # Variables de configuración para el entorno de desarrollo
