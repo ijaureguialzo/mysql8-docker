@@ -29,7 +29,7 @@ services:
       - phpmyadmin
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin:${PHPMYADMIN_VERSION}
+    image: phpmyadmin:${PHPMYADMIN_VERSION}
     expose:
       - 80
     depends_on:
