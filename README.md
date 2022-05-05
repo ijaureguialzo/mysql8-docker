@@ -14,6 +14,7 @@ Instrucciones para arrancar una base de datos MySQL 8 en local mediante Docker.
 2. En Windows, instalar [Scoop](https://scoop.sh) usando PowerShell:
 
    ```powershell
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
    Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
    ```
