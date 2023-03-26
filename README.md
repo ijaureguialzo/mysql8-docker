@@ -2,14 +2,10 @@
 
 Instrucciones para arrancar una base de datos MySQL 8 en local mediante Docker.
 
-## Instalación
+## Prerrequisitos
 
-1. Instalar Docker Desktop para [Windows y macOS](https://www.docker.com/products/docker-desktop)
-   o [Linux](https://docs.docker.com/desktop/linux/).
-
-   > Para evitar errores de credenciales al descargar contenedores, hay que registrarse
-   > en [Docker Hub](https://hub.docker.com) e iniciar sesión con esa cuenta
-   > en Docker Desktop.
+1. Instalar Docker Desktop para [Windows y macOS](https://www.docker.com/products/docker-desktop/)
+   o [Linux](https://docs.docker.com/desktop/linux/install/).
 
 2. En Windows, instalar [Scoop](https://scoop.sh) usando PowerShell:
 
@@ -22,7 +18,7 @@ Instrucciones para arrancar una base de datos MySQL 8 en local mediante Docker.
    Y después instalar los comandos necesarios:
 
    ```powershell
-   scoop install git make
+   scoop install make
    ```
 
 3. Clonar este repositorio:
@@ -31,13 +27,17 @@ Instrucciones para arrancar una base de datos MySQL 8 en local mediante Docker.
    git clone https://github.com/ijaureguialzo/mysql8.git
    ```
 
-4. En un terminal, situarse en la carpeta `mysql8` (o si se ha renombrado, la que contenga este archivo `README.md`):
+   > Si el comando anterior no funciona, habrá que [instalar Git](https://git-scm.com/downloads) en el sistema.
+
+## Arrancar la base de datos
+
+1. En un terminal, situarse en la carpeta `mysql8` (o si se ha renombrado, la que contenga este archivo `README.md`):
 
    ```shell
    cd mysql8
    ```
 
-5. Copiar el fichero `env-example` a `.env`:
+2. Copiar el fichero `env-example` a `.env`:
 
    En macOS y Linux:
 
@@ -53,7 +53,7 @@ Instrucciones para arrancar una base de datos MySQL 8 en local mediante Docker.
 
    > Es recomendable cambiar las contraseñas por defecto definidas en el fichero `.env`.
 
-6. Arrancar los servicios:
+3. Arrancar los servicios:
 
    ```shell
    make start
@@ -61,7 +61,7 @@ Instrucciones para arrancar una base de datos MySQL 8 en local mediante Docker.
 
    > Si al arrancar da errores porque los puertos están ocupados, se pueden elegir otros editando el fichero `.env`.
 
-7. Cuando haya arrancado (tarda unos minutos) se puede administrar el servidor
+4. Cuando haya arrancado (tarda unos minutos) se puede administrar el servidor
    mediante [phpMyAdmin](https://localhost:8080).
 
 ## MySQL Workbench
