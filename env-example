@@ -1,5 +1,4 @@
 # Versiones de los contenedores
-
 MYSQL_VERSION=8-oracle
 PHPMYADMIN_VERSION=latest
 
@@ -8,7 +7,6 @@ MYSQL_PORT=3306
 PHPMYADMIN_PORT=8080
 
 # Variables de configuración para el entorno de desarrollo
-
 MYSQL_ROOT_PASSWORD=12345Abcde
 MYSQL_DATABASE=egibide
 MYSQL_USER=egibide
