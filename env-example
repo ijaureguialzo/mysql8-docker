@@ -1,7 +1,7 @@
 # Versiones de los contenedores
 
 MYSQL_VERSION=8-oracle
-PHPMYADMIN_VERSION=5.1
+PHPMYADMIN_VERSION=latest
 
 # Puertos para PhpMyAdmin y MySQL
 MYSQL_PORT=3306
