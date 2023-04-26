@@ -14,3 +14,8 @@ MYSQL_PASSWORD=12345Abcde
 
 # Prefijo para los contenedores
 COMPOSE_PROJECT_NAME=mysql8
+
+# Límites de recursos
+LIMITE_MEMORIA=4G
+LIMITE_UPLOAD_SIZE=1G
+LIMITE_TIMEOUT_PHP=600

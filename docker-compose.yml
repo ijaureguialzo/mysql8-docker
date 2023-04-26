@@ -21,6 +21,11 @@ services:
       DOMAINS: >
         localhost -> http://phpmyadmin:80
       STAGE: local
+      CLIENT_MAX_BODY_SIZE: ${LIMITE_UPLOAD_SIZE}
+      PROXY_CONNECT_TIMEOUT: ${LIMITE_TIMEOUT_PHP}
+      PROXY_SEND_TIMEOUT: ${LIMITE_TIMEOUT_PHP}
+      PROXY_READ_TIMEOUT: ${LIMITE_TIMEOUT_PHP}
+      KEEPALIVE_TIMEOUT: ${LIMITE_TIMEOUT_PHP}
     volumes:
       - https-portal_certs:/var/lib/https-portal
     ports:
@@ -40,6 +45,9 @@ services:
       - PMA_ABSOLUTE_URI=https://localhost:${PHPMYADMIN_PORT:-8080}
       - PMA_USER=root
       - PMA_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - UPLOAD_LIMIT=${LIMITE_UPLOAD_SIZE}
+      - MAX_EXECUTION_TIME=${LIMITE_TIMEOUT_PHP}
+      - MEMORY_LIMIT=${LIMITE_MEMORIA}
     volumes:
       - phpmyadmin_sessions:/sessions
 
