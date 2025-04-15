@@ -14,6 +14,7 @@ services:
 
   https-portal:
     image: steveltn/https-portal:1
+    stop_signal: SIGTERM
     environment:
       DOMAINS: >
         localhost -> http://phpmyadmin:80
