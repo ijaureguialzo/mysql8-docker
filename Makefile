@@ -34,7 +34,7 @@ _start-command:
 start: _start-command _urls
 
 stop:
-	@docker compose stop
+	@docker compose down
 
 restart: stop start
 
